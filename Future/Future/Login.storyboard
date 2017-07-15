@@ -50,6 +50,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="OFe-0C-6uN" firstAttribute="width" secondItem="8xK-8h-m83" secondAttribute="width" id="iHc-Jh-gZv"/>
                                     <constraint firstItem="H61-YR-P71" firstAttribute="leading" secondItem="8xK-8h-m83" secondAttribute="leading" constant="40" id="kRb-wg-5Vb"/>
                                     <constraint firstAttribute="trailing" secondItem="H61-YR-P71" secondAttribute="trailing" constant="40" id="xtD-4i-ezo"/>
                                 </constraints>
