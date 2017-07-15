@@ -80,6 +80,8 @@
 		B144E24D1F1A49D60082A5F6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B144E2501F1A4A420082A5F6 /* LoginViewController */,
+				B144E2511F1A4A4C0082A5F6 /* FeedViewController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -96,6 +98,28 @@
 			children = (
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		B144E2501F1A4A420082A5F6 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = LoginViewController;
+			sourceTree = "<group>";
+		};
+		B144E2511F1A4A4C0082A5F6 /* FeedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B144E2521F1A4A620082A5F6 /* ArticleViewController */,
+			);
+			name = FeedViewController;
+			sourceTree = "<group>";
+		};
+		B144E2521F1A4A620082A5F6 /* ArticleViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ArticleViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
