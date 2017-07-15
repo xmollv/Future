@@ -21,11 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let loginViewController = LoginViewController.instantiateFrom(.login)
-        loginViewController.dataProvider = dataProvider
-        window?.rootViewController = loginViewController
+        checkUserStatus()
         
         return true
+    }
+    
+    private func checkUserStatus() {
+        if let _ = UserDefaults.standard.value(forKey: kUserName) {
+            let feedViewController = FeedViewController.instantiateFrom(.feed)
+            feedViewController.dataProvider = dataProvider
+            let navigationController = UINavigationController(rootViewController: feedViewController)
+            window?.rootViewController = navigationController
+        } else {
+            let loginViewController = LoginViewController.instantiateFrom(.login)
+            loginViewController.dataProvider = dataProvider
+            window?.rootViewController = loginViewController
+        }
     }
 
 }

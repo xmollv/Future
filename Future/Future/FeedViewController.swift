@@ -12,7 +12,7 @@ class FeedViewController: UIViewController {
     
     //MARK:- IBOutlets
     @IBOutlet var tableView: UITableView!
-    let logoutButton = UIBarButtonItem(title: "Log out", style: .done, target: self, action: #selector(logoutButtonTapped(_:)))
+    var logoutButton: UIBarButtonItem!
     
     //MARK: Class properties
     var dataProvider: DataProvider!
@@ -21,14 +21,17 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //FIXME: Create a UIColor extension to hold every color used in the app
+        if let name = UserDefaults.standard.value(forKey: kUserName) as? String {
+            title = "\(name)'s news feed"
+        } else {
+            fatalError("We should neve reach this state without a name")
+        }
+        
         navigationController?.navigationBar.barTintColor = UIColor.darkGray
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        
+        logoutButton = UIBarButtonItem(title: "Log out", style: .done, target: self, action: #selector(logoutButtonTapped(_:)))
         navigationItem.rightBarButtonItem = logoutButton
-        
-        title = "[Name's] news feed"
         
         dataProvider.get(.news) { (result: Result<[Article]>) in
             dump(result)
@@ -38,8 +41,10 @@ class FeedViewController: UIViewController {
     
     //MARK:- Private methods
     @objc private func logoutButtonTapped(_ sender: UIBarButtonItem) {
-        //FIXME: Missing implementation
-        print("logout")
+        UserDefaults.standard.removeObject(forKey: kUserName)
+        let loginViewController = LoginViewController.instantiateFrom(.login)
+        loginViewController.dataProvider = dataProvider
+        changeRootViewControllerWithAnimation(currentRoot: self, newRoot: loginViewController)
     }
 
 }

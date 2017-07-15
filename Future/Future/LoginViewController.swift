@@ -50,14 +50,16 @@ class LoginViewController: UIViewController {
     
     //MARK:- IBActions
     @IBAction private func loginTapped(_ sender: UIButton) {
-        //FIXME: Missing feature
         // Save the username on UserDefaults. It will be used as a token to know
-        // if the user is already logged in or not.
-        
-        let feedViewController = FeedViewController.instantiateFrom(.feed)
-        feedViewController.dataProvider = dataProvider
-        let navigationController = UINavigationController(rootViewController: feedViewController)
-        changeRootViewControllerWithAnimation(currentRoot: self, newRoot: navigationController)
+        // if the user is already logged in or not and switch the root view controller
+        if let name = nameTextField.text, !name.isEmpty {
+            UserDefaults.standard.set(name, forKey: kUserName)
+            
+            let feedViewController = FeedViewController.instantiateFrom(.feed)
+            feedViewController.dataProvider = dataProvider
+            let navigationController = UINavigationController(rootViewController: feedViewController)
+            changeRootViewControllerWithAnimation(currentRoot: self, newRoot: navigationController)
+        }
     }
     
     //MARK:- Private methods
