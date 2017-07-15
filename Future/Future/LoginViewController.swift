@@ -47,7 +47,10 @@ class LoginViewController: UIViewController {
     
     //MARK:- IBActions
     @IBAction private func loginTapped(_ sender: UIButton) {
-        dump("loginTapped")
+        //FIXME: Missing feature
+        // Save the username on UserDefaults. It will be used as a token to know
+        // if the user is already logged in or not.
+        
     }
     
     //MARK:- Private methods
