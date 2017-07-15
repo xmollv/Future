@@ -35,6 +35,16 @@ class LoginViewController: UIViewController {
         roundLoginButton()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        nameTextField.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        nameTextField.resignFirstResponder()
+    }
+    
     //MARK:- IBActions
     @IBAction private func loginTapped(_ sender: UIButton) {
         dump("loginTapped")
