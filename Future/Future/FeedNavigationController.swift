@@ -12,6 +12,9 @@ class FeedNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let feedViewController = FeedViewController.instantiateFrom(.feed)
+        setViewControllers([feedViewController], animated: false)
     }
 
 }

@@ -51,6 +51,8 @@ class LoginViewController: UIViewController {
         // Save the username on UserDefaults. It will be used as a token to know
         // if the user is already logged in or not.
         
+        let navigationController = FeedNavigationController.instantiateFrom(.feed)
+        changeRootViewControllerWithAnimation(currentRoot: self, newRoot: navigationController)
     }
     
     //MARK:- Private methods
