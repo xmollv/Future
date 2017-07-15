@@ -11,6 +11,7 @@ import UIKit
 
 enum Storyboard: String {
     case login
+    case feed
 }
 
 extension UIViewController {
