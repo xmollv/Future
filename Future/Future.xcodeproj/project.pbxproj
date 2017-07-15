@@ -23,6 +23,7 @@
 		B144E26E1F1A78670082A5F6 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144E26D1F1A78670082A5F6 /* DataProvider.swift */; };
 		B144E2701F1A7A610082A5F6 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144E26F1F1A7A610082A5F6 /* Article.swift */; };
 		B144E2721F1A7E5C0082A5F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144E2711F1A7E5C0082A5F6 /* Constants.swift */; };
+		B144E2741F1A8B390082A5F6 /* FeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144E2731F1A8B390082A5F6 /* FeedDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B144E26D1F1A78670082A5F6 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		B144E26F1F1A7A610082A5F6 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		B144E2711F1A7E5C0082A5F6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B144E2731F1A8B390082A5F6 /* FeedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				B144E25C1F1A53BE0082A5F6 /* Feed.storyboard */,
 				B144E25E1F1A53D00082A5F6 /* FeedViewController.swift */,
+				B144E2731F1A8B390082A5F6 /* FeedDataSource.swift */,
 				B144E2651F1A71260082A5F6 /* FeedCell.swift */,
 				B144E2521F1A4A620082A5F6 /* ArticleViewController */,
 			);
@@ -271,6 +274,7 @@
 				B144E23A1F1A49780082A5F6 /* AppDelegate.swift in Sources */,
 				B144E2591F1A4D8E0082A5F6 /* UIViewController.swift in Sources */,
 				B144E2661F1A71260082A5F6 /* FeedCell.swift in Sources */,
+				B144E2741F1A8B390082A5F6 /* FeedDataSource.swift in Sources */,
 				B144E2721F1A7E5C0082A5F6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

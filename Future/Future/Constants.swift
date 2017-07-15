@@ -9,3 +9,4 @@
 import Foundation
 
 let kUserName = "userName"
+let kFeedCell = "FeedCell"

@@ -20,8 +20,8 @@ class FeedCell: UITableViewCell {
     //MARK:- View lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 6
-        layer.masksToBounds = true
+        newsImageView.layer.cornerRadius = 6
+        newsImageView.layer.masksToBounds = true
         clearCell()
     }
     
@@ -30,11 +30,18 @@ class FeedCell: UITableViewCell {
         clearCell()
     }
     
-    //MARK: Private methods
+    //MARK:- Private methods
     private func clearCell() {
         newsImageView.image = nil
         newsDateLabel.text = nil
         newsTitleLabel.text = nil
         newsDescriptionLabel.text = nil
+    }
+    
+    //MARK:- Public methods
+    func configure(with article: Article) {
+        newsDateLabel.text = article.date
+        newsTitleLabel.text = article.title
+        newsDescriptionLabel.text = article.summary
     }
 }

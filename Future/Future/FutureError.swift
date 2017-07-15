@@ -31,11 +31,9 @@ enum FutureError: Error {
         Logger.log(message: "\(error)", event: .error)
         
         func showAlert(message: String = "Something went wrong.") {
-            DispatchQueue.main.async {
-                let alert = UIAlertController(title: "Woops!", message: "\(message)", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
-                vc.present(alert, animated: true, completion: nil)
-            }
+            let alert = UIAlertController(title: "Woops!", message: "\(message)", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+            vc.present(alert, animated: true, completion: nil)
         }
         
         if let error = error as? FutureError {

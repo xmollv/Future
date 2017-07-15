@@ -16,6 +16,12 @@ class FeedViewController: UIViewController {
     
     //MARK: Class properties
     var dataProvider: DataProvider!
+    let feedDataSource = FeedDataSource()
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(fetchData), for: .valueChanged)
+        return refreshControl
+    }()
 
     //MARK:- View controller lifecycle
     override func viewDidLoad() {
@@ -33,10 +39,12 @@ class FeedViewController: UIViewController {
         logoutButton = UIBarButtonItem(title: "Log out", style: .done, target: self, action: #selector(logoutButtonTapped(_:)))
         navigationItem.rightBarButtonItem = logoutButton
         
-        dataProvider.get(.news) { (result: Result<[Article]>) in
-            dump(result)
-        }
+        tableView.dataSource = feedDataSource
+        tableView.estimatedRowHeight = 250
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.refreshControl = refreshControl
         
+        fetchData()
     }
     
     //MARK:- Private methods
@@ -45,6 +53,20 @@ class FeedViewController: UIViewController {
         let loginViewController = LoginViewController.instantiateFrom(.login)
         loginViewController.dataProvider = dataProvider
         changeRootViewControllerWithAnimation(currentRoot: self, newRoot: loginViewController)
+    }
+    
+    @objc private func fetchData() {
+        dataProvider.get(.news) { [weak weakSelf = self] (result: Result<[Article]>) in
+            guard let weakSelf = weakSelf else { return }
+            switch result {
+            case .isSuccess(let articles):
+                weakSelf.feedDataSource.replaceCurrentArticlesWith(articles: articles)
+            case .isFailure(let error):
+                 FutureError.handle(error: error, onCurrentViewController: weakSelf)
+            }
+            weakSelf.tableView.reloadData()
+            weakSelf.refreshControl.endRefreshing()
+        }
     }
 
 }

@@ -31,10 +31,13 @@ final class DataProvider {
                 }
                 
                 let articles = results.flatMap{ T(dict: $0) }
-                completion(Result.isSuccess(articles))
+                DispatchQueue.main.async { // The completion handlers will run on the main thread
+                    completion(Result.isSuccess(articles))
+                }
             case .isFailure(let error):
-                completion(Result.isFailure(error))
-                
+                DispatchQueue.main.async {
+                    completion(Result.isFailure(error))
+                }
             }
         }
     }
