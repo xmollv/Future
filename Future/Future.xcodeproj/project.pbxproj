@@ -13,6 +13,7 @@
 		B144E2541F1A4AC60082A5F6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B144E2531F1A4AC60082A5F6 /* Login.storyboard */; };
 		B144E2561F1A4AD30082A5F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144E2551F1A4AD30082A5F6 /* LoginViewController.swift */; };
 		B144E2591F1A4D8E0082A5F6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144E2581F1A4D8E0082A5F6 /* UIViewController.swift */; };
+		B144E25B1F1A4FF70082A5F6 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144E25A1F1A4FF70082A5F6 /* KeyboardManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B144E2531F1A4AC60082A5F6 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B144E2551F1A4AD30082A5F6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B144E2581F1A4D8E0082A5F6 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		B144E25A1F1A4FF70082A5F6 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				B144E2571F1A4D790082A5F6 /* UIKit Extensions */,
+				B144E25A1F1A4FF70082A5F6 /* KeyboardManager.swift */,
 				B144E2401F1A49780082A5F6 /* Assets.xcassets */,
 				B144E2421F1A49780082A5F6 /* LaunchScreen.storyboard */,
 				B144E2451F1A49780082A5F6 /* Info.plist */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B144E25B1F1A4FF70082A5F6 /* KeyboardManager.swift in Sources */,
 				B144E2561F1A4AD30082A5F6 /* LoginViewController.swift in Sources */,
 				B144E23A1F1A49780082A5F6 /* AppDelegate.swift in Sources */,
 				B144E2591F1A4D8E0082A5F6 /* UIViewController.swift in Sources */,
