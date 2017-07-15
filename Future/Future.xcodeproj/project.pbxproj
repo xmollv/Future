@@ -16,7 +16,6 @@
 		B144E25B1F1A4FF70082A5F6 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144E25A1F1A4FF70082A5F6 /* KeyboardManager.swift */; };
 		B144E25D1F1A53BE0082A5F6 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B144E25C1F1A53BE0082A5F6 /* Feed.storyboard */; };
 		B144E25F1F1A53D00082A5F6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144E25E1F1A53D00082A5F6 /* FeedViewController.swift */; };
-		B144E2611F1A550A0082A5F6 /* FeedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144E2601F1A550A0082A5F6 /* FeedNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		B144E25A1F1A4FF70082A5F6 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		B144E25C1F1A53BE0082A5F6 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		B144E25E1F1A53D00082A5F6 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		B144E2601F1A550A0082A5F6 /* FeedNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				B144E25C1F1A53BE0082A5F6 /* Feed.storyboard */,
-				B144E2601F1A550A0082A5F6 /* FeedNavigationController.swift */,
 				B144E25E1F1A53D00082A5F6 /* FeedViewController.swift */,
 				B144E2521F1A4A620082A5F6 /* ArticleViewController */,
 			);
@@ -247,7 +244,6 @@
 				B144E25F1F1A53D00082A5F6 /* FeedViewController.swift in Sources */,
 				B144E23A1F1A49780082A5F6 /* AppDelegate.swift in Sources */,
 				B144E2591F1A4D8E0082A5F6 /* UIViewController.swift in Sources */,
-				B144E2611F1A550A0082A5F6 /* FeedNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
