@@ -53,7 +53,6 @@ class LoginViewController: UIViewController {
         
         let feedViewController = FeedViewController.instantiateFrom(.feed)
         let navigationController = UINavigationController(rootViewController: feedViewController)
-        navigationController.navigationBar.barTintColor = UIColor.darkGray
         changeRootViewControllerWithAnimation(currentRoot: self, newRoot: navigationController)
     }
     
