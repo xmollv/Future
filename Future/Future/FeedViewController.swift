@@ -13,6 +13,9 @@ class FeedViewController: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet var tableView: UITableView!
     let logoutButton = UIBarButtonItem(title: "Log out", style: .done, target: self, action: #selector(logoutButtonTapped(_:)))
+    
+    //MARK: Class properties
+    var dataProvider: DataProvider!
 
     //MARK:- View controller lifecycle
     override func viewDidLoad() {
@@ -26,6 +29,10 @@ class FeedViewController: UIViewController {
         navigationItem.rightBarButtonItem = logoutButton
         
         title = "[Name's] news feed"
+        
+        dataProvider.get(.news) { (result: Result<[Article]>) in
+            dump(result)
+        }
         
     }
     

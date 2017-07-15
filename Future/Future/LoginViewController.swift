@@ -15,6 +15,9 @@ class LoginViewController: UIViewController {
     @IBOutlet fileprivate var logInButton: UIButton!
     @IBOutlet fileprivate var bottomScrollViewConstraint: NSLayoutConstraint!
     
+    //MARK: Class properties
+    var dataProvider: DataProvider!
+    
     //MARK:- View controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +55,7 @@ class LoginViewController: UIViewController {
         // if the user is already logged in or not.
         
         let feedViewController = FeedViewController.instantiateFrom(.feed)
+        feedViewController.dataProvider = dataProvider
         let navigationController = UINavigationController(rootViewController: feedViewController)
         changeRootViewControllerWithAnimation(currentRoot: self, newRoot: navigationController)
     }
