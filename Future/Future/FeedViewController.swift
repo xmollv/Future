@@ -10,11 +10,15 @@ import UIKit
 
 class FeedViewController: UIViewController {
     
+    //MARK:- IBOutlets
+    @IBOutlet var tableView: UITableView!
     let logoutButton = UIBarButtonItem(title: "Log out", style: .done, target: self, action: #selector(logoutButtonTapped(_:)))
 
+    //MARK:- View controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //FIXME: Create a UIColor extension to hold every color used in the app
         navigationController?.navigationBar.barTintColor = UIColor.darkGray
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
@@ -22,8 +26,10 @@ class FeedViewController: UIViewController {
         navigationItem.rightBarButtonItem = logoutButton
         
         title = "[Name's] news feed"
+        
     }
     
+    //MARK:- Private methods
     @objc private func logoutButtonTapped(_ sender: UIBarButtonItem) {
         //FIXME: Missing implementation
         print("logout")

@@ -26,11 +26,11 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="142" id="pAh-2R-6cc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedCell" rowHeight="142" id="pAh-2R-6cc" customClass="FeedCell" customModule="Future" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pAh-2R-6cc" id="JL8-hh-bVT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="141.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mN6-ly-1wd">
@@ -41,6 +41,7 @@
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-dM-6le">
                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                                    <color key="backgroundColor" red="0.84700495004653931" green="0.84710079431533813" blue="0.84694981575012207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="100" id="6nm-Dl-xAu"/>
                                                                         <constraint firstAttribute="width" constant="100" id="iaX-BA-YaQ"/>
@@ -81,6 +82,12 @@
                                                 <constraint firstItem="mN6-ly-1wd" firstAttribute="top" secondItem="JL8-hh-bVT" secondAttribute="topMargin" id="tIn-jb-O12"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newsDateLabel" destination="LeH-yO-9K7" id="lQy-Ba-xbP"/>
+                                            <outlet property="newsDescriptionLabel" destination="Qui-zq-FXj" id="ksj-f3-dfe"/>
+                                            <outlet property="newsImageView" destination="cJZ-dM-6le" id="iKO-Zw-NVg"/>
+                                            <outlet property="newsTitleLabel" destination="UGt-B6-jX8" id="F2Z-Mi-DlB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -94,6 +101,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pIx-bZ-g4q"/>
+                    <connections>
+                        <outlet property="tableView" destination="zTE-5y-weo" id="NDp-7P-8Ro"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxz-7X-lT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
