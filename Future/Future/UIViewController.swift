@@ -12,6 +12,7 @@ import UIKit
 enum Storyboard: String {
     case login
     case feed
+    case article
 }
 
 extension UIViewController {

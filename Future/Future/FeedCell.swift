@@ -39,9 +39,9 @@ class FeedCell: UITableViewCell {
     }
     
     //MARK:- Public methods
-    func configure(with article: Article) {
-        newsDateLabel.text = article.date
-        newsTitleLabel.text = article.title
-        newsDescriptionLabel.text = article.summary
+    func configure(with news: News) {
+        newsDateLabel.text = news.date
+        newsTitleLabel.text = news.title
+        newsDescriptionLabel.text = news.summary
     }
 }

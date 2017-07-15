@@ -57,11 +57,11 @@ class FeedViewController: UIViewController {
     }
     
     @objc private func fetchData() {
-        dataProvider.get(.news) { [weak weakSelf = self] (result: Result<[Article]>) in
+        dataProvider.getMultiple(.news) { [weak weakSelf = self] (result: Result<[News]>) in
             guard let weakSelf = weakSelf else { return }
             switch result {
-            case .isSuccess(let articles):
-                weakSelf.feedDataSource.replaceCurrentArticlesWith(articles: articles)
+            case .isSuccess(let news):
+                weakSelf.feedDataSource.replaceCurrentNewsWith(news: news)
             case .isFailure(let error):
                  FutureError.handle(error: error, onCurrentViewController: weakSelf)
             }
@@ -74,10 +74,14 @@ class FeedViewController: UIViewController {
 //MARK:- UITableViewDelegate
 extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let article = feedDataSource.elementAt(indexPath: indexPath) {
-            dump(article)
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let news = feedDataSource.elementAt(indexPath: indexPath) {
+            let articleViewController = ArticleViewController.instantiateFrom(.article)
+            articleViewController.dataProvider = dataProvider
+            articleViewController.articleId = news.id
+            navigationController?.pushViewController(articleViewController, animated: true)
         } else {
-            Logger.log(message: "There isn't any article at the position: \(indexPath.row)", event: .warning)
+            Logger.log(message: "There isn't any news at the position: \(indexPath.row)", event: .warning)
         }
     }
 }

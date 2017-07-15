@@ -140,7 +140,7 @@ enum Endpoint {
         case .news:
             return "\(baseUrl)/fw-coding-test.json"
         case .newsDetails(let id):
-            return "\(baseUrl)/future-workshops/\(id).json"
+            return "\(baseUrl)/\(id).json"
         }
     }
 }
