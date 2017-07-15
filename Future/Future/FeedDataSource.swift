@@ -10,17 +10,30 @@ import UIKit
 
 class FeedDataSource: NSObject, UITableViewDataSource {
     
+    //MARK:- Class properties
     private var articles: [Article]?
     
+    //MARK:- Initialization
     override init() {
         super.init()
         articles = nil
     }
     
+    //MARK:- Public methods
     func replaceCurrentArticlesWith(articles: [Article]) {
         self.articles = articles
     }
     
+    func elementAt(indexPath: IndexPath) -> Article? {
+        guard let articles = articles else { return nil }
+        if indexPath.row < articles.count {
+            return articles[indexPath.row]
+        } else {
+            return nil
+        }
+    }
+    
+    //MARK:- Data source methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let articlesCount = articles?.count else {
             let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)

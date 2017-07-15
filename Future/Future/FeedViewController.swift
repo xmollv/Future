@@ -39,6 +39,7 @@ class FeedViewController: UIViewController {
         logoutButton = UIBarButtonItem(title: "Log out", style: .done, target: self, action: #selector(logoutButtonTapped(_:)))
         navigationItem.rightBarButtonItem = logoutButton
         
+        tableView.delegate = self
         tableView.dataSource = feedDataSource
         tableView.estimatedRowHeight = 250
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -68,5 +69,15 @@ class FeedViewController: UIViewController {
             weakSelf.refreshControl.endRefreshing()
         }
     }
+}
 
+//MARK:- UITableViewDelegate
+extension FeedViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let article = feedDataSource.elementAt(indexPath: indexPath) {
+            dump(article)
+        } else {
+            Logger.log(message: "There isn't any article at the position: \(indexPath.row)", event: .warning)
+        }
+    }
 }
