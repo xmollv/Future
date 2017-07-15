@@ -50,6 +50,9 @@
                                                 <state key="normal" title="Log in">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginTapped:" destination="3FD-wc-u78" eventType="touchUpInside" id="TyO-1X-rL2"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

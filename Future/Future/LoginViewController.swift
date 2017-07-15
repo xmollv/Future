@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
 
     //MARK:- IBOutlets
     @IBOutlet private var nameTextField: UITextField!
-    @IBOutlet private var logInButton: UIButton!
+    @IBOutlet fileprivate var logInButton: UIButton!
     @IBOutlet fileprivate var bottomScrollViewConstraint: NSLayoutConstraint!
     
     //MARK:- View controller lifecycle
@@ -22,6 +22,11 @@ class LoginViewController: UIViewController {
                                                selector: #selector(keyboardChanged(notification:)),
                                                name: .UIKeyboardWillChangeFrame,
                                                object: nil)
+        // Disable the login button until the user types a name
+        logInButton.isEnabled = false
+        changeButtonBackgroundColor(sender: logInButton)
+        
+        nameTextField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,16 +35,47 @@ class LoginViewController: UIViewController {
         roundLoginButton()
     }
     
+    //MARK:- IBActions
+    @IBAction private func loginTapped(_ sender: UIButton) {
+        dump("loginTapped")
+    }
+    
     //MARK:- Private methods
     private func roundLoginButton() {
         let height = logInButton.bounds.height
         logInButton.layer.cornerRadius = height/2
         logInButton.layer.masksToBounds = true
     }
+    
+    fileprivate func changeButtonBackgroundColor(sender: UIButton) {
+        switch sender.state {
+        case UIControlState.disabled:
+            sender.backgroundColor = UIColor.lightGray
+        default:
+            sender.backgroundColor = UIColor.darkGray
+        }
+    }
 
 }
 
-//MARK: UIKeyboardWillChangeFrame extension
+//MARK:- UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text {
+            let finalText = (text as NSString).replacingCharacters(in: range, with: string).trimmingCharacters(in: .whitespaces)
+            if finalText.isEmpty {
+                logInButton.isEnabled = false
+                changeButtonBackgroundColor(sender: logInButton)
+            } else {
+                logInButton.isEnabled = true
+                changeButtonBackgroundColor(sender: logInButton)
+            }
+        }
+        return true
+    }
+}
+
+//MARK:- UIKeyboardWillChangeFrame extension
 extension LoginViewController {
     @objc fileprivate func keyboardChanged(notification: NSNotification) {
         KeyboardManager.keyboardNotification(notification: notification, constraint: bottomScrollViewConstraint, view: self.view)
