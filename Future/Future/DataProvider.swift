@@ -13,7 +13,7 @@ protocol JSONInitiable {
 }
 
 final class DataProvider {
-    let webService = WebService()
+    private let webService = WebService()
     
     /// This method recieves an Endpoint object that describes the URL that's going to be called
     /// and a completion that will be called when the API returns a response. The Type of the completion

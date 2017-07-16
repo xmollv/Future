@@ -12,10 +12,10 @@ import UIKit
 class FeedCell: UITableViewCell {
     
     //MARK:- IBOutlets
-    @IBOutlet var newsImageView: UIImageView!
-    @IBOutlet var newsDateLabel: UILabel!
-    @IBOutlet var newsTitleLabel: UILabel!
-    @IBOutlet var newsDescriptionLabel: UILabel!
+    @IBOutlet private var newsImageView: UIImageView!
+    @IBOutlet private var newsDateLabel: UILabel!
+    @IBOutlet private var newsTitleLabel: UILabel!
+    @IBOutlet private var newsDescriptionLabel: UILabel!
     
     //MARK:- View lifecycle
     override func awakeFromNib() {

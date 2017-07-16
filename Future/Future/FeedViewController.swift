@@ -11,13 +11,13 @@ import UIKit
 class FeedViewController: UIViewController {
     
     //MARK:- IBOutlets
-    @IBOutlet var tableView: UITableView!
-    var logoutButton: UIBarButtonItem!
+    @IBOutlet private var tableView: UITableView!
+    private var logoutButton: UIBarButtonItem!
     
     //MARK: Class properties
     var dataProvider: DataProvider!
-    let feedDataSource = FeedDataSource()
-    lazy var refreshControl: UIRefreshControl = {
+    fileprivate let feedDataSource = FeedDataSource()
+    lazy private var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(fetchData), for: .valueChanged)
         return refreshControl
