@@ -55,10 +55,12 @@ class ArticleViewController: UIViewController {
             if let url = URL(string: article.imageUrl) {
                 articleImageView.setRemoteImage(url: url)
             }
+            title = article.title
             articleTitleLabel.text = article.title
             articleSubtitleLabel.text = "\(article.source) - \(article.date)"
             articleTextView.text = article.content
         } else {
+            title = ""
             articleTitleLabel.text = ""
             articleSubtitleLabel.text = ""
             articleTextView.text = ""

@@ -33,6 +33,8 @@ class FeedViewController: UIViewController {
             fatalError("We should neve reach this state without a name")
         }
         
+        // Replace tha back bar button item by a default one to look more like the design
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.barTintColor = UIColor.darkGray
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
