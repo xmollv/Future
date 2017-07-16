@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
     }
     
     //MARK:- IBActions
-    @IBAction private func loginTapped(_ sender: UIButton) {
+    @IBAction fileprivate func loginTapped(_ sender: UIButton) {
         // Save the username on UserDefaults. It will be used as a token to know
         // if the user is already logged in or not and switch the root view controller
         if let name = nameTextField.text, !name.isEmpty {
@@ -94,6 +94,12 @@ extension LoginViewController: UITextFieldDelegate {
                 changeButtonBackgroundColor(sender: logInButton)
             }
         }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        loginTapped(UIButton())
+        textField.resignFirstResponder()
         return true
     }
 }
