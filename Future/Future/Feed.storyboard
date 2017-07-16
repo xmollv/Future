@@ -40,7 +40,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ffU-pY-kGQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="122"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-dM-6le">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-dM-6le" customClass="RemoteImageView" customModule="Future" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                                     <color key="backgroundColor" red="0.84700495004653931" green="0.84710079431533813" blue="0.84694981575012207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>

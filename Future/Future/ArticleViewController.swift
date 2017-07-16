@@ -11,7 +11,7 @@ import UIKit
 class ArticleViewController: UIViewController {
     
     //MARK: IBOutlets
-    @IBOutlet private var articleImageView: UIImageView!
+    @IBOutlet private var articleImageView: RemoteImageView!
     @IBOutlet private var articleScrollView: UIScrollView!
     @IBOutlet private var articleTitleLabel: UILabel!
     @IBOutlet private var articleSubtitleLabel: UILabel!
@@ -31,10 +31,8 @@ class ArticleViewController: UIViewController {
         fetchData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // Used the scrollView to create more of a 'card' style UI leaving the
-        // article image on the background when scrolling
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         let imageHeight = articleImageView.bounds.height
         articleScrollView.contentInset = UIEdgeInsetsMake(imageHeight, 0, 0, 0)
     }
@@ -54,6 +52,9 @@ class ArticleViewController: UIViewController {
     
     private func updateUI(with article: Article?) {
         if let article = article {
+            if let url = URL(string: article.imageUrl) {
+                articleImageView.setRemoteImage(url: url)
+            }
             articleTitleLabel.text = article.title
             articleSubtitleLabel.text = "\(article.source) - \(article.date)"
             articleTextView.text = article.content

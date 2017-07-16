@@ -14,7 +14,7 @@
         <!--Article View Controller-->
         <scene sceneID="lyl-OI-136">
             <objects>
-                <viewController storyboardIdentifier="ArticleViewController" id="xgc-ak-27r" customClass="ArticleViewController" customModule="Future" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleViewController" automaticallyAdjustsScrollViewInsets="NO" id="xgc-ak-27r" customClass="ArticleViewController" customModule="Future" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wmd-W0-mEJ"/>
                         <viewControllerLayoutGuide type="bottom" id="WrS-x7-aUY"/>
@@ -23,14 +23,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mjr-Na-VJs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mjr-Na-VJs" customClass="RemoteImageView" customModule="Future" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="250"/>
                                 <color key="backgroundColor" red="0.72113931179046631" green="0.71767419576644897" blue="0.71751028299331665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mjr-Na-VJs" secondAttribute="height" multiplier="3:2" id="QtH-cE-EHP"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAq-Af-lor">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAq-Af-lor">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbl-9D-SqU">

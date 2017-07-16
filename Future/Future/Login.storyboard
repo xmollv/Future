@@ -29,7 +29,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="8xK-8h-m83">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="418"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OFe-0C-6uN">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OFe-0C-6uN" customClass="RemoteImageView" customModule="Future" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                                 <color key="backgroundColor" red="0.72113931179046631" green="0.71767419576644897" blue="0.71751028299331665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -82,6 +82,7 @@
                     <connections>
                         <outlet property="bottomScrollViewConstraint" destination="eWU-rD-Kmy" id="kyU-kI-NEg"/>
                         <outlet property="logInButton" destination="H1M-Ai-DbR" id="osE-IG-ApB"/>
+                        <outlet property="loginImageView" destination="OFe-0C-6uN" id="lEw-3K-ZKu"/>
                         <outlet property="nameTextField" destination="H61-YR-P71" id="Xtm-kK-vIY"/>
                     </connections>
                 </viewController>

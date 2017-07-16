@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1357E001F1B7F10009DB4F8 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1357DFF1F1B7F10009DB4F8 /* RemoteImageView.swift */; };
 		B144E23A1F1A49780082A5F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144E2391F1A49780082A5F6 /* AppDelegate.swift */; };
 		B144E2411F1A49780082A5F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B144E2401F1A49780082A5F6 /* Assets.xcassets */; };
 		B144E2441F1A49780082A5F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B144E2421F1A49780082A5F6 /* LaunchScreen.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B1357DFF1F1B7F10009DB4F8 /* RemoteImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		B144E2361F1A49780082A5F6 /* Future.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Future.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B144E2391F1A49780082A5F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B144E2401F1A49780082A5F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		B144E24E1F1A49DF0082A5F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B1357DFF1F1B7F10009DB4F8 /* RemoteImageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				B144E25F1F1A53D00082A5F6 /* FeedViewController.swift in Sources */,
 				B144E23A1F1A49780082A5F6 /* AppDelegate.swift in Sources */,
 				B144E2781F1A93BF0082A5F6 /* ArticleViewController.swift in Sources */,
+				B1357E001F1B7F10009DB4F8 /* RemoteImageView.swift in Sources */,
 				B144E2591F1A4D8E0082A5F6 /* UIViewController.swift in Sources */,
 				B144E2661F1A71260082A5F6 /* FeedCell.swift in Sources */,
 				B144E2741F1A8B390082A5F6 /* FeedDataSource.swift in Sources */,

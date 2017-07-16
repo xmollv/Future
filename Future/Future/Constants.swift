@@ -10,3 +10,4 @@ import Foundation
 
 let kUserName = "userName"
 let kFeedCell = "FeedCell"
+let kLoginImage = "https://s3.amazonaws.com/future-workshops/fw-coding-login-image.jpg"
