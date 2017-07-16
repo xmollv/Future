@@ -40,6 +40,7 @@ class FeedDataSource: NSObject, UITableViewDataSource {
             activityIndicator.startAnimating()
             activityIndicator.hidesWhenStopped = true
             tableView.backgroundView = activityIndicator
+            tableView.separatorStyle = .none
             return 0
         }
         
@@ -49,8 +50,10 @@ class FeedDataSource: NSObject, UITableViewDataSource {
             label.font = UIFont.systemFont(ofSize: 10)
             label.text = "There aren't any news :("
             tableView.backgroundView = label
+            tableView.separatorStyle = .none
         } else {
             tableView.backgroundView = nil
+            tableView.separatorStyle = .singleLine
         }
         
         return newsCount
