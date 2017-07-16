@@ -52,7 +52,9 @@ class FeedViewController: UIViewController {
     
     //MARK:- Private methods
     @objc private func logoutButtonTapped(_ sender: UIBarButtonItem) {
+        // Clean the state of the app and return to login
         UserDefaults.standard.removeObject(forKey: kUserName)
+        UserDefaults.standard.removeObject(forKey: kFavoritedArticles)
         let loginViewController = LoginViewController.instantiateFrom(.login)
         loginViewController.dataProvider = dataProvider
         changeRootViewControllerWithAnimation(currentRoot: self, newRoot: loginViewController)
