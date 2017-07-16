@@ -41,7 +41,7 @@ class FeedCell: UITableViewCell {
     //MARK:- Public methods
     func configure(with news: News) {
         if let url = URL(string: news.iconUrl) {
-            newsImageView.setRemoteImage(url: url)
+            newsImageView.sd_setImage(with: url)
         }
         newsDateLabel.text = news.date
         newsTitleLabel.text = news.title

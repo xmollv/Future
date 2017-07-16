@@ -59,7 +59,7 @@ class ArticleViewController: UIViewController {
         self.article = article
         if let article = article {
             if let url = URL(string: article.imageUrl) {
-                articleImageView.setRemoteImage(url: url)
+                articleImageView.sd_setImage(with: url)
             }
             title = article.title
             articleTitleLabel.text = article.title

@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         // Disable the login button until the user types a name
         logInButton.isEnabled = false
         changeButtonBackgroundColor(sender: logInButton)
-        loginImageView.setRemoteImage(url: URL(string:kLoginImage)!)
+        loginImageView.sd_setImage(with: URL(string:kLoginImage))
         nameTextField.delegate = self
     }
     
