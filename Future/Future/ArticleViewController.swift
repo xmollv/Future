@@ -27,7 +27,7 @@ class ArticleViewController: UIViewController {
         // Removes the unwanted padding for the UITextView
         articleTextView.textContainerInset = UIEdgeInsets.zero
         articleTextView.textContainer.lineFragmentPadding = 0
-        
+        updateUI(with: nil)
         fetchData()
     }
     
@@ -41,8 +41,26 @@ class ArticleViewController: UIViewController {
     
     //MARK: Private methods
     private func fetchData() {
-        dataProvider.getSingle(.newsDetails(id: articleId)) { (result: Result<Article>) in
-            dump(result)
+        dataProvider.getSingle(.newsDetails(id: articleId)) { [weak weakSelf = self] (result: Result<Article>) in
+            guard let weakSelf = weakSelf else { return }
+            switch result {
+            case .isSuccess(let article):
+                weakSelf.updateUI(with: article)
+            case .isFailure(let error):
+                FutureError.handle(error: error, onCurrentViewController: weakSelf)
+            }
+        }
+    }
+    
+    private func updateUI(with article: Article?) {
+        if let article = article {
+            articleTitleLabel.text = article.title
+            articleSubtitleLabel.text = "\(article.source) - \(article.date)"
+            articleTextView.text = article.content
+        } else {
+            articleTitleLabel.text = ""
+            articleSubtitleLabel.text = ""
+            articleTextView.text = ""
         }
     }
 
